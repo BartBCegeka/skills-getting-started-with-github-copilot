@@ -74,6 +74,83 @@ section h3 {
   margin-bottom: 8px;
 }
 
+.participants-section {
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #eef4ff 0%, #f7fbff 100%);
+  border: 1px solid #dbe7ff;
+}
+
+.participants-heading {
+  margin-bottom: 8px;
+  color: #0f2f6b;
+}
+
+.participants-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.participant-item {
+  margin-bottom: 8px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  border: 1px solid #d5e3ff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.participant-email {
+  color: #1f3559;
+  word-break: break-word;
+}
+
+.participant-item:last-child {
+  margin-bottom: 0;
+}
+
+.participant-remove-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid #f2b7b7;
+  background-color: #fff2f2;
+  color: #ad1f1f;
+  font-size: 18px;
+  line-height: 1;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.participant-remove-btn:not(:disabled):hover {
+  background-color: #ffe3e3;
+  border-color: #e08080;
+  color: #8f1919;
+  transform: scale(1.05);
+}
+
+.participant-remove-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.participants-empty {
+  margin-bottom: 0;
+  color: #4b5f86;
+  font-style: italic;
+}
+
 .form-group {
   margin-bottom: 15px;
 }
