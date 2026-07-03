@@ -13,13 +13,19 @@ document.addEventListener("DOMContentLoaded", () => {
       .replaceAll("'", "&#39;");
   }
 
+  let messageHideTimeoutId;
+
   function showMessage(message, type) {
     messageDiv.textContent = message;
-    messageDiv.className = type;
+    messageDiv.className = `message ${type}`;
     messageDiv.classList.remove("hidden");
 
+    if (messageHideTimeoutId) {
+      clearTimeout(messageHideTimeoutId);
+    }
+
     // Hide message after 5 seconds
-    setTimeout(() => {
+    messageHideTimeoutId = window.setTimeout(() => {
       messageDiv.classList.add("hidden");
     }, 5000);
   }
@@ -64,9 +70,9 @@ document.addEventListener("DOMContentLoaded", () => {
           : '<p class="participants-empty">No participants yet. Be the first to sign up!</p>';
 
         activityCard.innerHTML = `
-          <h4>${name}</h4>
-          <p>${details.description}</p>
-          <p><strong>Schedule:</strong> ${details.schedule}</p>
+          <h4>${escapeHtml(name)}</h4>
+          <p>${escapeHtml(details.description)}</p>
+          <p><strong>Schedule:</strong> ${escapeHtml(details.schedule)}</p>
           <p><strong>Availability:</strong> ${spotsLeft} spots left</p>
           <div class="participants-section">
             <p class="participants-heading"><strong>Participants (${participants.length}):</strong></p>
